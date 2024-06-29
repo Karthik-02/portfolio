@@ -11,7 +11,7 @@ const projects = [
     },
     {
       title: "Plagiarism Detector",
-      image: "https://private-user-images.githubusercontent.com/81423983/329983276-68ab81eb-da46-4180-b25e-5cd88a609da9.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTkwNzEyOTgsIm5iZiI6MTcxOTA3MDk5OCwicGF0aCI6Ii84MTQyMzk4My8zMjk5ODMyNzYtNjhhYjgxZWItZGE0Ni00MTgwLWIyNWUtNWNkODhhNjA5ZGE5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA2MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNjIyVDE1NDMxOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTk5MTliNGY2YjkxNGYxNGY1ZDg5OTkxMDNmZWY5OTA1ZGU1OWJhYzlkODdlOGJkYzAwM2ZiMjRkYjIzMjlmZTAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.GA4gVPO9pefjahPHYmJyyLQwLUzbmwNHy6f9pYwlJME",
+      image: "https://github.com/Karthik-02/plagiarism-detection/assets/81423983/68ab81eb-da46-4180-b25e-5cd88a609da9",
       technologies: ["NLP", "Web Scraping", "Data Visualization"],
       repository: "https://github.com/Karthik-02/plagiarism-detection"
     },
