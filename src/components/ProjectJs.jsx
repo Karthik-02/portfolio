@@ -5,7 +5,7 @@ import ProjectCard from './ProjectCard';
 const projects = [
     {
       title: "Crowd-Fund-Chain",
-      image: "https://private-user-images.githubusercontent.com/81423983/330081131-b1cf6255-7c9e-4929-b481-329ba2752629.PNG?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTkwNzEyNTMsIm5iZiI6MTcxOTA3MDk1MywicGF0aCI6Ii84MTQyMzk4My8zMzAwODExMzEtYjFjZjYyNTUtN2M5ZS00OTI5LWI0ODEtMzI5YmEyNzUyNjI5LlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA2MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNjIyVDE1NDIzM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTM0OGZmZjNkYzYyMDA2ZDllYWJjNjZmZTBjMjhlYjhhOThlYTc3ZjZiOGM5ZjBjOTI0NDZiNDU5OWVjYWFkOTUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.bLw3dWkm21si4pUL8islNki-WSwhPf13iTQbubtc1Mk",
+      image: "https://github.com/Karthik-02/crowdfundchain/assets/81423983/b1cf6255-7c9e-4929-b481-329ba2752629",
       technologies: ["React", "ViteJS", "TailwindCSS", "Thirdweb.js", "Metamask", "Sepolia Etherium"],
       repository: "https://github.com/Karthik-02/crowdfundchain"
     },
