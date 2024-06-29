@@ -1,0 +1,98 @@
+/* src/styles/contact.css */
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-family: 'JetBrains Mono';
+  }
+  
+  .socials, .form {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .socials h2, .form h2 {
+    color: #c8c8c8;
+  }
+  
+  .socials ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .socials ul li {
+    margin-bottom: 10px;
+  }
+  
+  .socials ul li strong {
+    color: #fff;
+  }
+  
+  .socials ul li a {
+    color: #58a6ff;
+    text-decoration: none;
+  }
+  
+  .socials ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .separator {
+    border-left: 2px solid #fff;
+    height: 100%;
+  }
+  
+  .form {
+    padding-left: 20px;
+  }
+  
+  .form label {
+    margin-bottom: 5px;
+    color: #c8c8c8;
+  }
+  
+  .form input, .form textarea, .form button {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .form textarea {
+    height: 90px;
+  }
+  
+  .form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #58a6ff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .form button:hover {
+    background-color: #007acc;
+  }
+  
+  .submission-message {
+    color: #00ff00;
+  }
+
+  @media screen and (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .socials, .form {
+      width: 100%;
+      padding: 10px;
+    }
+  }

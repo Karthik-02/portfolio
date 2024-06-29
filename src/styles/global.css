@@ -1,0 +1,24 @@
+/* src/styles/global.css */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #282c34;
+  color: #abb2bf;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Adjustments for mobile devices */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px; /* Adjust base font size for smaller screens */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 12px; /* Further adjust base font size for smaller screens */
+  }
+}
