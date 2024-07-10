@@ -24,7 +24,7 @@ const DefaultComponent = () => {
         <h2 className="role">Software Developer<span className="cursor">|</span></h2>
         <div className="button-container">
           <button className="work-button" onClick={handleViewWorkClick}>View Work 🚀</button>
-          <button className="caffeine-button" onClick={handleGetMeCaffeineClick}>Get me Caffeine ☕</button>
+          <button className="caffeine-button" onClick={handleGetMeCaffeineClick}>Mail me 📧</button>
         </div>
       </div>
     </div>
