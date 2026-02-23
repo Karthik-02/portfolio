@@ -1,5 +1,5 @@
 // src/components/EditorLayout.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TopBar from './TopBar';
 import Sidebar from './Sidebar';
 import '../styles/editor.css';
@@ -9,66 +9,102 @@ import AboutHtml from './AboutHtml';
 import ContactCss from './ContactCss';
 import ProjectJs from './ProjectJs';
 import ExperienceJson from './ExperienceJson';
-import GithubMd from './GithubMd';
-import javaIcon from '../assets/java-icon.jpg';
-import htmlIcon from '../assets/html-icon.png';
-import cssIcon from '../assets/css-icon.png';
-import jsIcon from '../assets/js-icon.png';
-import jsonIcon from '../assets/json-icon.png';
-import mdIcon from '../assets/md-icon.png';
+
+const filesMeta = {
+  'home.java': { dot: '#f97316', lang: 'Java' },
+  'about.html': { dot: '#e34c26', lang: 'HTML' },
+  'contact.css': { dot: '#38bdf8', lang: 'CSS' },
+  'project.js': { dot: '#fbbf24', lang: 'JavaScript' },
+  'experience.json': { dot: '#4ade80', lang: 'JSON' },
+};
 
 const fileComponents = {
-  'home.java': { component: HomeJava, icon: javaIcon },
-  'about.html': { component: AboutHtml, icon: htmlIcon },
-  'contact.css': { component: ContactCss, icon: cssIcon },
-  'project.js': { component: ProjectJs, icon: jsIcon },
-  'experience.json': { component: ExperienceJson, icon: jsonIcon },
-  'github.md': { component: GithubMd, icon: mdIcon },
+  'home.java': HomeJava,
+  'about.html': AboutHtml,
+  'contact.css': ContactCss,
+  'project.js': ProjectJs,
+  'experience.json': ExperienceJson,
 };
+
+const LineGutter = ({ count = 60 }) => (
+  <div className="line-gutter" aria-hidden="true">
+    {Array.from({ length: count }, (_, i) => (
+      <span key={i + 1}>{i + 1}</span>
+    ))}
+  </div>
+);
 
 const EditorLayout = () => {
   const [openFiles, setOpenFiles] = useState([]);
   const [activeFile, setActiveFile] = useState(null);
+  // desktop: sidebar starts open; on mobile it starts closed
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+
+  // Close sidebar by default on small screens
+  useEffect(() => {
+    if (window.innerWidth < 768) setSidebarOpen(false);
+  }, []);
 
   const handleFileClick = (file) => {
-    if (!openFiles.includes(file)) {
-      setOpenFiles([...openFiles, file]);
-    }
+    if (!openFiles.includes(file)) setOpenFiles([...openFiles, file]);
     setActiveFile(file);
   };
 
-  const handleCloseFile = (file) => {
-    setOpenFiles(openFiles.filter(f => f !== file));
+  const handleCloseFile = (e, file) => {
+    e.stopPropagation();
+    const remaining = openFiles.filter(f => f !== file);
+    setOpenFiles(remaining);
     if (activeFile === file) {
-      setActiveFile(openFiles.length > 1 ? openFiles.find(f => f !== file) : null);
+      setActiveFile(remaining.length > 0 ? remaining[remaining.length - 1] : null);
     }
   };
 
-  const renderActiveFile = () => {
-    if (activeFile) {
-      const Component = fileComponents[activeFile].component;
-      return <Component />;
-    }
-    return <DefaultComponent />;
-  };
+  const toggleSidebar = () => setSidebarOpen(v => !v);
+
+  const ActiveComponent = activeFile ? fileComponents[activeFile] : null;
 
   return (
     <div className="editor-layout">
-      <TopBar />
+      <TopBar onHamburger={toggleSidebar} />
       <div className="main-content">
-        <Sidebar openFiles={openFiles} onFileClick={handleFileClick} />
+        <Sidebar
+          onFileClick={handleFileClick}
+          activeFile={activeFile}
+          sidebarOpen={sidebarOpen}
+          onToggle={toggleSidebar}
+        />
+
         <div className="editor">
+          {/* Tab bar */}
           <div className="tabs">
+            {openFiles.length === 0 && (
+              <div className="tabs-empty">
+                <span>← Select a file to begin</span>
+              </div>
+            )}
             {openFiles.map(file => (
-              <div className={`tab ${file === activeFile ? 'active' : ''}`} key={file}>
-                <img src={fileComponents[file].icon} alt="File Icon" />
-                <span onClick={() => setActiveFile(file)}>{file}</span>
-                <button onClick={() => handleCloseFile(file)}>X</button>
+              <div
+                className={`tab ${file === activeFile ? 'active' : ''}`}
+                key={file}
+                onClick={() => setActiveFile(file)}
+              >
+                <span className="file-dot" style={{ background: filesMeta[file]?.dot }} />
+                <span>{file}</span>
+                <button onClick={(e) => handleCloseFile(e, file)} title="Close tab">×</button>
               </div>
             ))}
           </div>
-          <div className="tab-content">
-            {renderActiveFile()}
+
+          {/* Editor body: gutter + content */}
+          <div className="editor-body">
+            <LineGutter />
+            <div className="tab-content">
+              {ActiveComponent ? (
+                <ActiveComponent />
+              ) : (
+                <DefaultComponent onFileClick={handleFileClick} />
+              )}
+            </div>
           </div>
         </div>
       </div>

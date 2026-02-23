@@ -1,25 +1,33 @@
 // src/components/ProjectCard.jsx
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/projects.css';
 
 const ProjectCard = ({ project }) => {
-  const [isSelected, setIsSelected] = useState(false);
-
-  const toggleSelected = () => {
-    setIsSelected(!isSelected);
-  };
-
   return (
-    <div className={`project-card ${isSelected ? 'project-selected' : ''}`} onClick={toggleSelected}>
-      {/* Card content */}
-      <img src={project.image} alt={project.title} className="project-image" />
-      <h2 className="project-title">{project.title}</h2>
-      <div className="technologies">
-        {project.technologies.map((tech, index) => (
-          <div key={index} className="technology">{tech}</div>
-        ))}
+    <div className="project-card">
+      <img
+        src={project.image}
+        alt={project.title}
+        className="project-image"
+        onError={e => { e.currentTarget.style.display = 'none'; }}
+      />
+      <div className="project-body">
+        <h3 className="project-title">{project.title}</h3>
+        <div className="technologies">
+          {project.technologies.map((tech, i) => (
+            <span className="technology" key={i}>{tech}</span>
+          ))}
+        </div>
+        <a
+          href={project.repository}
+          className="source-code-button"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={e => e.stopPropagation()}
+        >
+          Source Code
+        </a>
       </div>
-      <a href={project.repository} className="source-code-button" target="_blank" rel="noopener noreferrer">Source Code</a>
     </div>
   );
 };

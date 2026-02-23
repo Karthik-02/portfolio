@@ -2,49 +2,92 @@
 import React, { useState } from 'react';
 import '../styles/contact.css';
 
+const socials = [
+  {
+    icon: '📧',
+    name: 'Email',
+    handle: 'karthik04siva@gmail.com',
+    url: 'mailto:karthik04siva@gmail.com',
+  },
+  {
+    icon: '🐙',
+    name: 'GitHub',
+    handle: 'Karthik-02',
+    url: 'https://github.com/Karthik-02/',
+  },
+  {
+    icon: '💼',
+    name: 'LinkedIn',
+    handle: 'Karthik Sivagnanam',
+    url: 'https://www.linkedin.com/in/karthik-sivagnanam-140a581b9/',
+  },
+];
+
 const ContactCss = () => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
     const formData = new FormData(e.target);
     const subject = formData.get('subject');
-    const body = formData.get('message');
-
-    const mailtoLink = `mailto:karthik04siva@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    console.log("mail sent");
-    window.location.href = mailtoLink;
+    const body = `Name: ${formData.get('name')}\nEmail: ${formData.get('email')}\n\n${formData.get('message')}`;
+    window.location.href = `mailto:karthik04siva@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setSubmitted(true);
   };
 
   return (
     <div className="contact-container">
-      <div className="socials">
-        <h2>Reach Out Via Socials</h2>
-        <ul>
-          <li><strong>Email:</strong> <a href="mailto:karthik04siva@gmail.com">karthik04siva@gmail.com</a></li>
-          <li><strong>GitHub:</strong> <a href="https://github.com/Karthik-02/" target="_blank" rel="noopener noreferrer">Karthik-02</a></li>
-          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/karthik-sivagnanam-140a581b9/" target="_blank" rel="noopener noreferrer">Karthik S</a></li>
-        </ul>
+      <div className="contact-header">
+        <h2>Contact</h2>
+        <p>// reach out — I'm always open to interesting conversations</p>
       </div>
-      <div className="separator"></div> {/* Vertical line */}
-      <div className="form">
-        <h2>Or Fill Out This Form</h2>
-        {submitted ? (
-          <p className="submission-message">Message sent successfully!</p>
-        ) : (
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="name">Name:</label>
-            <input type="text" id="name" name="name" required />
-            <label htmlFor="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-            <label htmlFor="subject">Subject:</label>
-            <input type="text" id="subject" name="subject" required />
-            <label htmlFor="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Submit</button>
-          </form>
-        )}
+
+      <div className="contact-grid">
+        {/* Social links */}
+        <div className="socials">
+          <h3>// Find me on</h3>
+          <div className="social-links">
+            {socials.map(s => (
+              <a href={s.url} key={s.name} className="social-link" target="_blank" rel="noopener noreferrer">
+                <span className="social-icon">{s.icon}</span>
+                <div className="social-info">
+                  <div className="social-name">{s.name}</div>
+                  <div className="social-handle">{s.handle}</div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Form */}
+        <div className="contact-form">
+          <h3>// Or drop a message</h3>
+          {submitted ? (
+            <p className="submission-message">✓ Message sent! I'll get back to you soon.</p>
+          ) : (
+            <form onSubmit={handleSubmit}>
+              <div className="form-field">
+                <label htmlFor="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required />
+              </div>
+              <div className="form-field">
+                <label htmlFor="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required />
+              </div>
+              <div className="form-field">
+                <label htmlFor="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Let's collaborate!" required />
+              </div>
+              <div className="form-field">
+                <label htmlFor="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell me about your project..." required />
+              </div>
+              <button type="submit" className="form-submit">
+                Send Message 🚀
+              </button>
+            </form>
+          )}
+        </div>
       </div>
     </div>
   );

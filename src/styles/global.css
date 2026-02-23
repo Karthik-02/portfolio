@@ -1,24 +1,92 @@
-/* src/styles/global.css */
-body, html, #root {
+/* ── Design Tokens ──────────────────────────────────────────────── */
+:root {
+  /* Background layers */
+  --bg-base:      #0d1117;
+  --bg-editor:    #13181f;
+  --bg-sidebar:   #0f1419;
+  --bg-topbar:    #0d1117;
+  --bg-tab:       #161c24;
+  --bg-tab-active:#1e2533;
+  --bg-card:      #161c24;
+  --bg-footer:    #7c3aed;
+
+  /* Accent & highlight */
+  --accent:       #7c3aed;
+  --accent-light: #a78bfa;
+  --accent-glow:  rgba(124, 58, 237, 0.35);
+  --cyan:         #38bdf8;
+  --green:        #4ade80;
+  --yellow:       #fbbf24;
+  --red:          #f87171;
+  --orange:       #fb923c;
+
+  /* Text */
+  --text-primary:   #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted:     #475569;
+  --text-code:      #a78bfa;
+
+  /* Border */
+  --border:       #1e2d3d;
+  --border-light: #2d3f50;
+
+  /* Font families */
+  --font-sans:  'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:  'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Spacing */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+
+  /* Transitions */
+  --transition: 200ms ease;
+}
+
+/* ── Reset ──────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html, body, #root {
   width: 100%;
   height: 100%;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: #282c34;
-  color: #abb2bf;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-/* Adjustments for mobile devices */
-@media screen and (max-width: 768px) {
-  html {
-    font-size: 14px; /* Adjust base font size for smaller screens */
-  }
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-@media screen and (max-width: 576px) {
-  html {
-    font-size: 12px; /* Further adjust base font size for smaller screens */
-  }
+/* ── Scrollbar ──────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
 }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ── Selection ─────────────────────────────────────────────────── */
+::selection {
+  background: var(--accent-glow);
+  color: var(--text-primary);
+}
+
+/* ── Links ──────────────────────────────────────────────────────── */
+a {
+  color: var(--accent-light);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover { color: var(--cyan); }
