@@ -2,7 +2,9 @@
 import React from 'react';
 import '../styles/editor.css';
 
-const TopBar = ({ onHamburger }) => {
+const TopBar = ({ onHamburger, theme, onThemeToggle }) => {
+  const isDark = theme === 'dark';
+
   return (
     <div className="top-bar">
       {/* Mobile hamburger */}
@@ -20,13 +22,27 @@ const TopBar = ({ onHamburger }) => {
         <span className="window-dot min" />
         <span className="window-dot max" />
       </div>
+
       <span className="top-bar-logo">⚡ karthik.dev</span>
+
       <div className="menu-items">
         {['File', 'Edit', 'View', 'Go', 'Run', 'Terminal', 'Help'].map(item => (
           <div className="menu-item" key={item}>{item}</div>
         ))}
       </div>
+
       <span className="top-bar-title">Karthik Sivagnanam — Portfolio</span>
+
+      {/* Theme toggle */}
+      <button
+        className="theme-toggle-btn"
+        onClick={onThemeToggle}
+        title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+        aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      >
+        <span className="theme-toggle-icon">{isDark ? '☀️' : '🌙'}</span>
+        <span className="theme-toggle-label">{isDark ? 'Light' : 'Dark'}</span>
+      </button>
     </div>
   );
 };

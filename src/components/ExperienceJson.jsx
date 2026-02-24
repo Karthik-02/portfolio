@@ -4,6 +4,30 @@ import '../styles/experience.css';
 
 const experiences = [
   {
+    date: '06/2025 – now',
+    location: 'Coimbatore, Tamil Nadu',
+    company: 'Justo Global',
+    role: 'Junior Developer',
+    logo: 'https://media.licdn.com/dms/image/D4D0BAQGpBKjtkJE60w/company-logo_100_100/0/1715777706194/exertsense_solutions_logo?e=1727308800&v=beta&t=XmZGEpneXgr64J_T_faqd8JN2oO_clG-UNFq9keiiFo',
+    details: [
+      'Worked in an In-House Project that provides permission based access control to cloud resources in AWS using golang.',
+      'Worked on a Christianity Based Social Media App called The Ark.',
+      'Learned Native Mobile App UI using Kotlin based Jetpack Compose framework.',
+    ],
+  },
+  {
+    date: '01/2025 – 06/2025',
+    location: 'Coimbatore, Tamil Nadu',
+    company: 'Justo Global',
+    role: 'Software Developer Intern',
+    logo: 'https://media.licdn.com/dms/image/D4D0BAQGpBKjtkJE60w/company-logo_100_100/0/1715777706194/exertsense_solutions_logo?e=1727308800&v=beta&t=XmZGEpneXgr64J_T_faqd8JN2oO_clG-UNFq9keiiFo',
+    details: [
+      'Worked on a donation management admin panel using Nodejs and Reactjs.',
+      'Majorly worked on building efficient backend APIs using Nodejs and Express.',
+      'Introduced Authentication mechanism to the same application',
+    ],
+  },
+  {
     date: '06/2023 – 11/2023',
     location: 'Chennai, Tamil Nadu',
     company: 'ExertSense Solutions',
@@ -51,8 +75,8 @@ const ExperienceJson = () => (
         <div className="event" key={i}>
           <div className="event-top">
             <div className="event-meta">
-              <div className="event-company">{exp.company}</div>
-              <div className="event-role">{exp.role}</div>
+              <div className="event-company">{exp.role}</div>
+              <div className="event-role">{exp.company}</div>
               <div className="event-date-loc">
                 <span>📅 {exp.date}</span>
                 <span>📍 {exp.location}</span>

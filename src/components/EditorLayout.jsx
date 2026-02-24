@@ -34,7 +34,7 @@ const LineGutter = ({ count = 60 }) => (
   </div>
 );
 
-const EditorLayout = () => {
+const EditorLayout = ({ theme, onThemeToggle }) => {
   const [openFiles, setOpenFiles] = useState([]);
   const [activeFile, setActiveFile] = useState(null);
   // desktop: sidebar starts open; on mobile it starts closed
@@ -65,7 +65,7 @@ const EditorLayout = () => {
 
   return (
     <div className="editor-layout">
-      <TopBar onHamburger={toggleSidebar} />
+      <TopBar onHamburger={toggleSidebar} theme={theme} onThemeToggle={onThemeToggle} />
       <div className="main-content">
         <Sidebar
           onFileClick={handleFileClick}

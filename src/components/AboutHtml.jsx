@@ -3,28 +3,26 @@ import React from 'react';
 import '../styles/about.css';
 
 const skills = [
-  { name: 'React', dot: '#38bdf8' },
-  { name: 'Django', dot: '#4ade80' },
-  { name: 'Python', dot: '#fbbf24' },
-  { name: 'Java', dot: '#f97316' },
   { name: 'JavaScript', dot: '#fbbf24' },
-  { name: 'C / C++', dot: '#a78bfa' },
   { name: 'Node.js', dot: '#4ade80' },
-  { name: 'MongoDB', dot: '#4ade80' },
-  { name: 'SQL', dot: '#38bdf8' },
-  { name: 'Angular', dot: '#f87171' },
+  { name: 'React', dot: '#38bdf8' },
+  { name: 'Golang', dot: '#f87171' },
+  { name: 'Jetpack Compose -Kotlin', dot: '#fbbf24' },
   { name: 'MERN Stack', dot: '#38bdf8' },
+  { name: 'SQL', dot: '#38bdf8' },
+  { name: 'Java', dot: '#f97316' },
+  { name: 'C / C++', dot: '#a78bfa' },
+  { name: 'MongoDB', dot: '#4ade80' },
   { name: 'Git', dot: '#f97316' },
-  { name: 'Linux', dot: '#fbbf24' },
 ];
 
 const education = [
   {
-    year: '2020 – Present',
+    year: '2020 – 2025',
     institution: 'Coimbatore Institute of Technology',
     degree: 'M.Sc. Software Systems',
     location: 'Coimbatore, Tamil Nadu',
-    grade: 'CGPA 8.62',
+    grade: 'CGPA 8.72',
   },
   {
     year: '2019 – 2020',
@@ -49,6 +47,12 @@ const AboutHtml = () => {
             👋 Hello! I'm <strong>Karthik S</strong>, a passionate software developer and M.Sc. Software Systems
             graduate from <strong>Coimbatore Institute of Technology</strong>. I love building products that sit at
             the intersection of clean code and great user experience.
+          </p>
+          <p>
+            I am currently working as a <strong>Junior Developer at Justo Global</strong>, During my <strong> intern, I worked on a donation management admin panel</strong>. Later I have also worked on
+            <strong> Permission Based Access Control In-House Project that used to manage cloud resources like Amazon Web Services using Golang as backend</strong>.
+            I have also learned <strong>Native Android Development</strong> using <strong> Kotlin Jetpack Compose Framework</strong>. I have also done features in
+            a Christianity Based Social Media App called <strong> The Ark </strong>.
           </p>
           <p>
             I've worked as a <strong>Software Developer at ExertSense Solutions</strong>, where I built an event

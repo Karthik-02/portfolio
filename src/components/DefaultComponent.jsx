@@ -57,7 +57,7 @@ const DefaultComponent = ({ onFileClick }) => {
         </div>
         <div className="hero-tech">
           <span className="hero-tech-label">// stack:</span>
-          {['React', 'Django', 'Python', 'Java', 'MERN'].map(t => (
+          {['Nodejs', 'Reactjs', 'MERN', 'Golang', 'Jetpack Compose'].map(t => (
             <span className="tech-badge" key={t}>{t}</span>
           ))}
         </div>
