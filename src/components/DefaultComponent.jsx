@@ -44,8 +44,8 @@ const DefaultComponent = ({ onFileClick }) => {
           <span className="cursor-blink" />
         </div>
         <p className="hero-desc">
-          M.Sc. Software Systems graduate from CIT · Passionate builder of web apps,
-          ML tools, and open-source projects · Always learning something new.
+          M.Sc. Software Systems graduate from CIT · Passionate builder of web apps and open-source projects
+          · Always learning something new.
         </p>
         <div className="hero-buttons">
           <button className="btn-primary" onClick={() => onFileClick('project.js')}>
