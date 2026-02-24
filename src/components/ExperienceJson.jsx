@@ -2,53 +2,102 @@
 import React from 'react';
 import '../styles/experience.css';
 
-const ExperienceJson = () => {
-  return (
-    <div className="experience-container">
-      <div className="timeline">
-        <div className="line"></div>
-        <div className="events">
-          <div className="event">
-            <div className="date">06/2023 – 11/2023</div>
-            <div className="location">Chennai, Tamil Nadu.</div>
-            <div className="company">ExertSense Solutions, Software Developer (Hybrid)</div>
-            <img src="https://media.licdn.com/dms/image/D4D0BAQGpBKjtkJE60w/company-logo_100_100/0/1715777706194/exertsense_solutions_logo?e=1727308800&v=beta&t=XmZGEpneXgr64J_T_faqd8JN2oO_clG-UNFq9keiiFo" alt="Sample" className="event-image" /> {/* Add the image */}
-            <div className="details">
-              <ul>
-                <li>Worked in the development of an event management application.</li>
-                <li>Learned developing applications using MERN Stack.</li>
-              </ul>
-            </div>
-          </div>
-          <div className="event">
-            <div className="date">12/2022 – 04/2023</div>
-            <div className="location">Chennai, Tamil Nadu.</div>
-            <div className="company">Mentor, FOSS CLUB, CIT</div>
-            <img src="https://media.licdn.com/dms/image/C510BAQHp5eXRydX-Sg/company-logo_100_100/0/1630574497498?e=1727308800&v=beta&t=HA8XR510e__ZgBXf7f0zJWzlLbd6J3kGnZ-D7Yjr0EY" alt="Sample" className="event-image" /> {/* Add the image */}
-            <div className="details">
-              <ul>
-                <li>Worked as a mentor in a 12-week workshop "The Coding Season".</li>
-                <li>Handled Problem Solving Sessions using C Language.</li>
-                <li>Lectured concepts of C programming Language.</li>
-              </ul>
-            </div>
-          </div>
-          <div className="event">
-            <div className="date">2020 – 2021</div>
-            <div className="location">Chennai, Tamil Nadu.</div>
-            <div className="company">Qiskit Localization Contributor, IBM</div>
-            <img src="https://media.licdn.com/dms/image/C4D0BAQFf2TGbOzTf_g/company-logo_100_100/0/1641761732232/qiskit_logo?e=1727308800&v=beta&t=A_8OXrjcBH1w1aS_eS5ck8SPow_AR7BocsSNROoSjaw" alt="Sample" className="event-image" /> {/* Add the image */}
-            <div className="details">
-              <ul>
-                <li>Contributed to the translation of IBM quantum computing guidebook to the Indian regional languages.</li>
-              </ul>
-            </div>
-          </div>
-          {/* Add more events as needed */}
-        </div>
-      </div>
+const experiences = [
+  {
+    date: '06/2025 – now',
+    location: 'Coimbatore, Tamil Nadu',
+    company: 'Justo Global',
+    role: 'Junior Developer',
+    logo: 'https://media.licdn.com/dms/image/D4D0BAQGpBKjtkJE60w/company-logo_100_100/0/1715777706194/exertsense_solutions_logo?e=1727308800&v=beta&t=XmZGEpneXgr64J_T_faqd8JN2oO_clG-UNFq9keiiFo',
+    details: [
+      'Worked in an In-House Project that provides permission based access control to cloud resources in AWS using golang.',
+      'Worked on a Christianity Based Social Media App called The Ark.',
+      'Learned Native Mobile App UI using Kotlin based Jetpack Compose framework.',
+    ],
+  },
+  {
+    date: '01/2025 – 06/2025',
+    location: 'Coimbatore, Tamil Nadu',
+    company: 'Justo Global',
+    role: 'Software Developer Intern',
+    logo: 'https://media.licdn.com/dms/image/D4D0BAQGpBKjtkJE60w/company-logo_100_100/0/1715777706194/exertsense_solutions_logo?e=1727308800&v=beta&t=XmZGEpneXgr64J_T_faqd8JN2oO_clG-UNFq9keiiFo',
+    details: [
+      'Worked on a donation management admin panel using Nodejs and Reactjs.',
+      'Majorly worked on building efficient backend APIs using Nodejs and Express.',
+      'Introduced Authentication mechanism to the same application',
+    ],
+  },
+  {
+    date: '06/2023 – 11/2023',
+    location: 'Chennai, Tamil Nadu',
+    company: 'ExertSense Solutions',
+    role: 'Software Developer (Hybrid)',
+    logo: 'https://media.licdn.com/dms/image/D4D0BAQGpBKjtkJE60w/company-logo_100_100/0/1715777706194/exertsense_solutions_logo?e=1727308800&v=beta&t=XmZGEpneXgr64J_T_faqd8JN2oO_clG-UNFq9keiiFo',
+    details: [
+      'Built and shipped an event management application using the MERN Stack.',
+      'Developed RESTful APIs with Node.js and Express; integrated MongoDB Atlas.',
+      'Collaborated in an Agile team with bi-weekly sprints and code reviews.',
+    ],
+  },
+  {
+    date: '12/2022 – 04/2023',
+    location: 'Coimbatore, Tamil Nadu',
+    company: 'FOSS Club, CIT',
+    role: 'Mentor',
+    logo: 'https://media.licdn.com/dms/image/C510BAQHp5eXRydX-Sg/company-logo_100_100/0/1630574497498',
+    details: [
+      'Mentored a 12-week workshop "The Coding Season" for junior students.',
+      'Facilitated weekly problem-solving sessions in C Language.',
+      'Lectured on fundamental programming concepts and algorithms.',
+    ],
+  },
+  {
+    date: '2020 – 2021',
+    location: 'Remote',
+    company: 'IBM Qiskit',
+    role: 'Localization Contributor',
+    logo: 'https://media.licdn.com/dms/image/C4D0BAQFf2TGbOzTf_g/company-logo_100_100/0/1641761732232/qiskit_logo',
+    details: [
+      'Contributed to the translation of IBM\'s quantum computing textbook to regional Indian languages.',
+      'Made quantum computing content accessible to a wider, non-English-speaking audience.',
+    ],
+  },
+];
+
+const ExperienceJson = () => (
+  <div className="experience-container">
+    <div className="experience-header">
+      <h2>Experience</h2>
+      <p>// {experiences.length} roles · hover a card for details</p>
     </div>
-  );
-};
+    <div className="timeline">
+      {experiences.map((exp, i) => (
+        <div className="event" key={i}>
+          <div className="event-top">
+            <div className="event-meta">
+              <div className="event-company">{exp.role}</div>
+              <div className="event-role">{exp.company}</div>
+              <div className="event-date-loc">
+                <span>📅 {exp.date}</span>
+                <span>📍 {exp.location}</span>
+              </div>
+            </div>
+            <img
+              src={exp.logo}
+              alt={exp.company}
+              className="event-image"
+              onError={e => { e.currentTarget.style.display = 'none'; }}
+            />
+          </div>
+          <div className="event-details">
+            <ul>
+              {exp.details.map((d, j) => <li key={j}>{d}</li>)}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+);
 
 export default ExperienceJson;

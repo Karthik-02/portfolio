@@ -2,199 +2,107 @@
 import React from 'react';
 import '../styles/about.css';
 
+const skills = [
+  { name: 'JavaScript', dot: '#fbbf24' },
+  { name: 'Node.js', dot: '#4ade80' },
+  { name: 'React', dot: '#38bdf8' },
+  { name: 'Golang', dot: '#f87171' },
+  { name: 'Jetpack Compose -Kotlin', dot: '#fbbf24' },
+  { name: 'MERN Stack', dot: '#38bdf8' },
+  { name: 'SQL', dot: '#38bdf8' },
+  { name: 'Java', dot: '#f97316' },
+  { name: 'C / C++', dot: '#a78bfa' },
+  { name: 'MongoDB', dot: '#4ade80' },
+  { name: 'Git', dot: '#f97316' },
+];
+
+const education = [
+  {
+    year: '2020 – 2025',
+    institution: 'Coimbatore Institute of Technology',
+    degree: 'M.Sc. Software Systems',
+    location: 'Coimbatore, Tamil Nadu',
+    grade: 'CGPA 8.72',
+  },
+  {
+    year: '2019 – 2020',
+    institution: 'Bharath Vidhya Bhavan',
+    degree: 'Higher Secondary (XII)',
+    location: 'Palani, Tamil Nadu',
+    grade: '84.5%',
+  },
+];
+
 const AboutHtml = () => {
   return (
     <div className="about-container">
-      <div className="about-section">
-        <h2>About</h2>
-        <div className="about-content">
-        <p>
-            <span style={{ color: '#f92672' }}>👋</span>{' '}
-            <span style={{ color: '#a6e22e' }}>Hello!</span>{' '}
-            <span style={{ color: '#66d9ef' }}>I'm</span>{' '}
-            <span style={{ color: '#f92672' }}>Karthik</span>{' '}
-            <span style={{ color: '#a6e22e' }}>S,</span>{' '}
-            <span style={{ color: '#66d9ef' }}>a</span>{' '}
-            <span style={{ color: '#f92672' }}>final-year</span>{' '}
-            <span style={{ color: '#a6e22e' }}>student</span>{' '}
-            <span style={{ color: '#66d9ef' }}>pursuing</span>{' '}
-            <span style={{ color: '#f92672' }}>M.Sc.</span>{' '}
-            <span style={{ color: '#a6e22e' }}>Software</span>{' '}
-            <span style={{ color: '#66d9ef' }}>Systems</span>{' '}
-            <span style={{ color: '#f92672' }}>at</span>{' '}
-            <span style={{ color: '#a6e22e' }}>Coimbatore</span>{' '}
-            <span style={{ color: '#66d9ef' }}>Institute</span>{' '}
-            <span style={{ color: '#f92672' }}>of</span>{' '}
-            <span style={{ color: '#a6e22e' }}>Technology.</span>{' '}
-            <span style={{ color: '#66d9ef' }}>🎓💻</span>
-          </p>
-          <p>
-            <span style={{ color: '#f92672' }}>I'm</span>{' '}
-            <span style={{ color: '#a6e22e' }}>a</span>{' '}
-            <span style={{ color: '#66d9ef' }}>passionate</span>{' '}
-            <span style={{ color: '#f92672' }}>programmer</span>{' '}
-            <span style={{ color: '#a6e22e' }}>and</span>{' '}
-            <span style={{ color: '#66d9ef' }}>tech</span>{' '}
-            <span style={{ color: '#f92672' }}>enthusiast,</span>{' '}
-            <span style={{ color: '#a6e22e' }}>always</span>{' '}
-            <span style={{ color: '#66d9ef' }}>eager</span>{' '}
-            <span style={{ color: '#f92672' }}>to</span>{' '}
-            <span style={{ color: '#a6e22e' }}>learn</span>{' '}
-            <span style={{ color: '#66d9ef' }}>and</span>{' '}
-            <span style={{ color: '#f92672' }}>explore</span>{' '}
-            <span style={{ color: '#a6e22e' }}>new</span>{' '}
-            <span style={{ color: '#66d9ef' }}>horizons</span>{' '}
-            <span style={{ color: '#f92672' }}>in</span>{' '}
-            <span style={{ color: '#a6e22e' }}>computer</span>{' '}
-            <span style={{ color: '#66d9ef' }}>science.</span>{' '}
-            <span style={{ color: '#f92672' }}>🚀</span>
-          </p>
-          <p>
-            <span style={{ color: '#66d9ef' }}>🔹</span>{' '}
-            <span style={{ color: '#a6e22e' }}>Education:</span>{' '}
-            <span style={{ color: '#f92672' }}>Started</span>{' '}
-            <span style={{ color: '#66d9ef' }}>my</span>{' '}
-            <span style={{ color: '#a6e22e' }}>coding</span>{' '}
-            <span style={{ color: '#f92672' }}>journey</span>{' '}
-            <span style={{ color: '#66d9ef' }}>during</span>{' '}
-            <span style={{ color: '#a6e22e' }}>high</span>{' '}
-            <span style={{ color: '#f92672' }}>school,</span>{' '}
-            <span style={{ color: '#66d9ef' }}>diving</span>{' '}
-            <span style={{ color: '#a6e22e' }}>into</span>{' '}
-            <span style={{ color: '#f92672' }}>C++</span>{' '}
-            <span style={{ color: '#66d9ef' }}>and</span>{' '}
-            <span style={{ color: '#a6e22e' }}>Python.</span>{' '}
-            <span style={{ color: '#f92672' }}>Currently</span>{' '}
-            <span style={{ color: '#66d9ef' }}>honing</span>{' '}
-            <span style={{ color: '#a6e22e' }}>my</span>{' '}
-            <span style={{ color: '#f92672' }}>skills</span>{' '}
-            <span style={{ color: '#66d9ef' }}>in</span>{' '}
-            <span style={{ color: '#a6e22e' }}>various</span>{' '}
-            <span style={{ color: '#f92672' }}>programming</span>{' '}
-            <span style={{ color: '#66d9ef' }}>languages</span>{' '}
-            <span style={{ color: '#a6e22e' }}>including</span>{' '}
-            <span style={{ color: '#f92672' }}>C,</span>{' '}
-            <span style={{ color: '#66d9ef' }}>C++,</span>{' '}
-            <span style={{ color: '#a6e22e' }}>Java,</span>{' '}
-            <span style={{ color: '#f92672' }}>and</span>{' '}
-            <span style={{ color: '#66d9ef' }}>Python,</span>{' '}
-            <span style={{ color: '#a6e22e' }}>along</span>{' '}
-            <span style={{ color: '#f92672' }}>with</span>{' '}
-            <span style={{ color: '#66d9ef' }}>hands-on</span>{' '}
-            <span style={{ color: '#a6e22e' }}>experience</span>{' '}
-            <span style={{ color: '#f92672' }}>in</span>{' '}
-            <span style={{ color: '#66d9ef' }}>web</span>{' '}
-            <span style={{ color: '#a6e22e' }}>frameworks</span>{' '}
-            <span style={{ color: '#f92672' }}>like</span>{' '}
-            <span style={{ color: '#66d9ef' }}>Angular,</span>{' '}
-            <span style={{ color: '#a6e22e' }}>Django,</span>{' '}
-            <span style={{ color: '#f92672' }}>and</span>{' '}
-            <span style={{ color: '#66d9ef' }}>React</span>{' '}
-            <span style={{ color: '#a6e22e' }}>during</span>{' '}
-            <span style={{ color: '#f92672' }}>my</span>{' '}
-            <span style={{ color: '#66d9ef' }}>academic</span>{' '}
-            <span style={{ color: '#a6e22e' }}>journey</span>{' '}
-            <span style={{ color: '#f92672' }}>at</span>{' '}
-            <span style={{ color: '#66d9ef' }}>CIT.</span>{' '}
-            <span style={{ color: '#f92672' }}>🔹</span>
-          </p>
-          <p>
-            <span style={{ color: '#66d9ef' }}>🔹</span>{' '}
-            <span style={{ color: '#a6e22e' }}>Experience:</span>{' '}
-            <span style={{ color: '#f92672' }}>Delved</span>{' '}
-            <span style={{ color: '#66d9ef' }}>into</span>{' '}
-            <span style={{ color: '#a6e22e' }}>software</span>{' '}
-            <span style={{ color: '#f92672' }}>development</span>{' '}
-            <span style={{ color: '#66d9ef' }}>as</span>{' '}
-            <span style={{ color: '#a6e22e' }}>a</span>{' '}
-            <span style={{ color: '#f92672' }}>Software</span>{' '}
-            <span style={{ color: '#66d9ef' }}>Developer</span>{' '}
-            <span style={{ color: '#a6e22e' }}>at</span>{' '}
-            <span style={{ color: '#f92672' }}>ExertSense</span>{' '}
-            <span style={{ color: '#66d9ef' }}>Solutions,</span>{' '}
-            <span style={{ color: '#a6e22e' }}>Chennai,</span>{' '}
-            <span style={{ color: '#f92672' }}>where</span>{' '}
-            <span style={{ color: '#66d9ef' }}>I</span>{' '}
-            <span style={{ color: '#a6e22e' }}>contributed</span>{' '}
-            <span style={{ color: '#f92672' }}>to</span>{' '}
-            <span style={{ color: '#66d9ef' }}>the</span>{' '}
-            <span style={{ color: '#a6e22e' }}>development</span>{' '}
-            <span style={{ color: '#f92672' }}>of</span>{' '}
-            <span style={{ color: '#66d9ef' }}>an</span>{' '}
-            <span style={{ color: '#a6e22e' }}>event</span>{' '}
-            <span style={{ color: '#f92672' }}>management</span>{' '}
-            <span style={{ color: '#66d9ef' }}>application</span>{' '}
-            <span style={{ color: '#a6e22e' }}>using</span>{' '}
-            <span style={{ color: '#f92672' }}>MERN</span>{' '}
-            <span style={{ color: '#66d9ef' }}>Stack.</span>{' '}
-            <span style={{ color: '#f92672' }}>🛠️</span>
-          </p>
-          <p>
-            <span style={{ color: '#66d9ef' }}>🔹</span>{' '}
-            <span style={{ color: '#a6e22e' }}>Contributions:</span>{' '}
-            <span style={{ color: '#f92672' }}>Actively</span>{' '}
-            <span style={{ color: '#66d9ef' }}>involved</span>{' '}
-            <span style={{ color: '#a6e22e' }}>in</span>{' '}
-            <span style={{ color: '#f92672' }}>the</span>{' '}
-            <span style={{ color: '#66d9ef' }}>tech</span>{' '}
-            <span style={{ color: '#a6e22e' }}>community</span>{' '}
-            <span style={{ color: '#f92672' }}>as</span>{' '}
-            <span style={{ color: '#66d9ef' }}>a</span>{' '}
-            <span style={{ color: '#a6e22e' }}>Mentor</span>{' '}
-            <span style={{ color: '#f92672' }}>at</span>{' '}
-            <span style={{ color: '#66d9ef' }}>FOSS</span>{' '}
-            <span style={{ color: '#a6e22e' }}>Club,</span>{' '}
-            <span style={{ color: '#f92672' }}>CIT,</span>{' '}
-            <span style={{ color: '#66d9ef' }}>where</span>{' '}
-            <span style={{ color: '#a6e22e' }}>I</span>{' '}
-            <span style={{ color: '#f92672' }}>facilitated</span>{' '}
-            <span style={{ color: '#66d9ef' }}>Problem</span>{' '}
-            <span style={{ color: '#a6e22e' }}>Solving</span>{' '}
-            <span style={{ color: '#f92672' }}>Sessions</span>{' '}
-            <span style={{ color: '#66d9ef' }}>and</span>{' '}
-            <span style={{ color: '#a6e22e' }}>lectured</span>{' '}
-            <span style={{ color: '#f92672' }}>on</span>{' '}
-            <span style={{ color: '#66d9ef' }}>C</span>{' '}
-            <span style={{ color: '#a6e22e' }}>programming</span>{' '}
-            <span style={{ color: '#f92672' }}>concepts.</span>{' '}
-            <span style={{ color: '#66d9ef' }}>Additionally,</span>{' '}
-            <span style={{ color: '#a6e22e' }}>I've</span>{' '}
-            <span style={{ color: '#f92672' }}>contributed</span>{' '}
-            <span style={{ color: '#66d9ef' }}>to</span>{' '}
-            <span style={{ color: '#a6e22e' }}>IBM's</span>{' '}
-            <span style={{ color: '#f92672' }}>Qiskit</span>{' '}
-            <span style={{ color: '#66d9ef' }}>Translation</span>{' '}
-            <span style={{ color: '#a6e22e' }}>project,</span>{' '}
-            <span style={{ color: '#f92672' }}>aiming</span>{' '}
-            <span style={{ color: '#66d9ef' }}>to</span>{' '}
-            <span style={{ color: '#a6e22e' }}>make</span>{' '}
-            <span style={{ color: '#f92672' }}>quantum</span>{' '}
-            <span style={{ color: '#66d9ef' }}>computing</span>{' '}
-            <span style={{ color: '#a6e22e' }}>accessible</span>{' '}
-            <span style={{ color: '#f92672' }}>in</span>{' '}
-            <span style={{ color: '#66d9ef' }}>regional</span>{' '}
-            <span style={{ color: '#a6e22e' }}>languages.</span>{' '}
-            <span style={{ color: '#f92672' }}>🌐</span>
-          </p>
-         </div>
-      </div>
-      <div className="education-section">
-        <h2>Education</h2>
-        <div className="education-content">
-          <div>
-            <p><span className="random-color">2020 – present</span></p>
-            <p><span className="random-color">Coimbatore, TamilNadu</span></p>
-            <p><span className="random-color">M.Sc. Software Systems, Coimbatore Institute Of Technology</span></p>
-            <p><span className="random-color">CGPA - 8.62</span></p>
-          </div>
-          <div>
-            <p><span className="random-color">2019 – 2020</span></p>
-            <p><span className="random-color">Palani, TamilNadu</span></p>
-            <p><span className="random-color">Higher Secondary, Bharath Vidhya Bhavan</span></p>
-            <p><span className="random-color">Percentage - 84.5%</span></p>
-          </div>
+      {/* About */}
+      <section>
+        <div className="about-section-header">
+          <h2>About Me</h2>
+          <span className="about-tag">about.html</span>
         </div>
-      </div>
+        <div className="about-bio">
+          <p>
+            👋 Hello! I'm <strong>Karthik S</strong>, a passionate software developer and M.Sc. Software Systems
+            graduate from <strong>Coimbatore Institute of Technology</strong>. I love building products that sit at
+            the intersection of clean code and great user experience.
+          </p>
+          <p>
+            I am currently working as a <strong>Junior Developer at Justo Global</strong>, During my <strong> intern, I worked on a donation management admin panel</strong>. Later I have also worked on
+            <strong> Permission Based Access Control In-House Project that used to manage cloud resources like Amazon Web Services using Golang as backend</strong>.
+            I have also learned <strong>Native Android Development</strong> using <strong> Kotlin Jetpack Compose Framework</strong>. I have also done features in
+            a Christianity Based Social Media App called <strong> The Ark </strong>.
+          </p>
+          <p>
+            I've worked as a <strong>Software Developer at ExertSense Solutions</strong>, where I built an event
+            management application using the MERN Stack. I'm also an active open-source contributor — I've contributed
+            to <strong>IBM's Qiskit</strong> translation project, helping make quantum computing accessible in regional languages.
+          </p>
+          <p>
+            Outside of coding I enjoy mentoring — I served as a <strong>Mentor at FOSS Club, CIT</strong> where I
+            facilitated problem-solving workshops and C programming sessions. I'm always looking for the next
+            challenge. 🚀
+          </p>
+        </div>
+      </section>
+
+      {/* Skills */}
+      <section>
+        <div className="about-section-header">
+          <h2>Skills</h2>
+          <span className="about-tag">tech stack</span>
+        </div>
+        <div className="skills-grid">
+          {skills.map(s => (
+            <span className="skill-chip" key={s.name}>
+              <span className="chip-dot" style={{ background: s.dot }} />
+              {s.name}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      {/* Education */}
+      <section>
+        <div className="about-section-header">
+          <h2>Education</h2>
+          <span className="about-tag">academic</span>
+        </div>
+        <div className="education-cards">
+          {education.map(e => (
+            <div className="edu-card" key={e.institution}>
+              <div className="edu-year">{e.year}</div>
+              <div className="edu-details">
+                <div className="edu-institution">{e.institution}</div>
+                <div className="edu-degree">{e.degree}</div>
+                <div className="edu-location">📍 {e.location}</div>
+                <span className="edu-grade">{e.grade}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 };
