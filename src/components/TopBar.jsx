@@ -35,13 +35,14 @@ const TopBar = ({ onHamburger, theme, onThemeToggle }) => {
 
       {/* Theme toggle */}
       <button
+        style={{ backgroundColor: isDark ? '#f1f5f9' : '#0d1117', color: isDark ? '#0d1117' : '#f1f5f9' }}
         className="theme-toggle-btn"
         onClick={onThemeToggle}
         title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
         aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
       >
         <span className="theme-toggle-icon">{isDark ? '☀️' : '🌙'}</span>
-        <span className="theme-toggle-label">{isDark ? 'Light' : 'Dark'}</span>
+        <span className="theme-toggle-label">{isDark ? ' Light' : ' Dark'}</span>
       </button>
     </div>
   );

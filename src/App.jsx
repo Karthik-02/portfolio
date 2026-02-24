@@ -21,8 +21,8 @@ const App = () => {
 
   return (
     <div className="app">
-      <Footer theme={theme} />
       <EditorLayout theme={theme} onThemeToggle={toggleTheme} />
+      <Footer theme={theme} />
     </div>
   );
 };
